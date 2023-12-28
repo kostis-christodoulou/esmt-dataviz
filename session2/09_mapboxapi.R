@@ -7,7 +7,7 @@ library(leaflet)
 mb_access_token("pk.ey......", install = TRUE)
 
 # mb_isochrone
-walk_5min <- mb_isochrone("Sammy Ofer Centre",
+walk_5min <- mb_isochrone("Schlossplatz 1, Berlin",
                           profile = "walking",
                           time = 7)
 
@@ -18,7 +18,7 @@ leaflet(walk_5min) %>%
 
 
 # mb_isochrone + mapdeck interactive map
-isochrones <- mb_isochrone("NW1 4SA", 
+isochrones <- mb_isochrone("Schlossplatz 1, Berlin", 
                            time = c(5, 10, 20),
                            profile = "cycling") 
 
