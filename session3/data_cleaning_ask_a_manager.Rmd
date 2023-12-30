@@ -33,7 +33,7 @@ library(countrycode)
 
 The purpose of this exercise is to apply the data cleaning steps to a raw data set. In this (unassessed) mini-workshop you will transform raw data into technically correct data and then to consistent data.
 
-You have 30 minutes to complete the workshop. If you have any questions I will be in the main room. Please leave your breakout room to ask questions. You can return to your breakout room from the main room afterwards. We will discuss your findings after the break exercise. I will randomly choose a group to share their results.
+You have 30 minutes to complete the workshop. If you have any questions I will be in the main room.
 
 Where to start analyzing a raw data set.
 

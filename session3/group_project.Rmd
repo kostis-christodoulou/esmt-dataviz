@@ -34,23 +34,39 @@ knitr::opts_chunk$set(
 
 Think about the questions below. What data do you need to answer them? Where can you find such data?
 
-•	How do countries generate electricity?
+• How do countries generate electricity?
 
-•	What is the link between C02 emissions and GDP growth?
+• What is the link between C02 emissions and GDP growth?
 
-•	Which countries have decoupled CO2 emissions from GDP growth?
+• Which countries have decoupled CO2 emissions from GDP growth?
 
-•	What is the link between electricity intensity and CO2 emissions?
+• What is the link between electricity intensity and CO2 emissions?
 
-You will make a series of 3-4 plots and will be assessed against the rubric shown below
+A lot of graphs are given to you, the data has been claned, joined, etc.
+
+As a group, you have to come up with 3-4 plots and will be assessed against the rubric shown below.
 
 ```{r rubric, echo=FALSE, out.width="90%"}
 knitr::include_graphics(here::here("images", "rubric_group.png"), error = FALSE)
 ```
 
+Before you jump into making your plots, I would like you to think of the following
 
-
-
+1.  **Audience (who)**
+    -   To whom are you communicating?
+    -   What do they already know?
+    -   What is your position and relationship?
+2.  **Content (what)**
+    -   What do you want them to know or do?
+    -   How will you communicate with them?
+    -   What tone do you want your communication to set?
+3.  **Evidence (how)**
+    -   What data is available to make my point?
+4.  **Context: Prepare Yourself**
+    -   What is the one key massage they should take home?
+    -   What background information is essential? What’s irrelevant?
+    -   What are potential biases of (some of) the audience?
+    -   What factors could weaken your case? Can we address them proactively?
 
 ```{r}
 #| label: load-libraries
@@ -70,7 +86,6 @@ library(ggtext)
 # Data Visualisation - Exploration
 
 Now that you have the basics of data manipulation, the goal of this assignment is to practice transforming, visualising, and exploring data.
-
 
 # Exploring sources of electricity production, CO2 emissions, and GDP per capita.
 
@@ -179,14 +194,11 @@ energy_long %>%
 
 ```
 
-
-
 2.  You may need to join these data frames
     -   Use `left_join` from `dplyr` to [join the tables](http://r4ds.had.co.nz/relational-data.html)
     -   To complete the merge, you need a unique *key* to match observations between the data frames. Country names may not be consistent among the three dataframes, so please use the 3-digit ISO code for each country
         -   An aside: There is a great package called [`countrycode`](https://github.com/vincentarelbundock/countrycode) that helps solve the problem of inconsistent country names (Is it UK? United Kingdom? Great Britain?). `countrycode()` takes as an input a country's name in a specific format and outputs it using whatever format you specify.
-    
-    
+
 ```{r}
 country_names <- energy_long %>% 
   distinct(iso_code, country) %>% 
@@ -235,10 +247,8 @@ join2 <- join2 %>%
          country = country.x) %>% 
   select(-c(indicator_id, indicator, iso2c, country.y))
 ```
-    
-    
-3.  Write a function that takes as input any country's name and returns all three graphs. You can use the `patchwork` package to arrange the three graphs
 
+3.  Write a function that takes as input any country's name and returns all three graphs. You can use the `patchwork` package to arrange the three graphs
 
 ```{r}
 library(viridis)
@@ -279,7 +289,6 @@ energy_mix("China")
 
 
 ```
-
 
 A function that plots top n countries for a chosen fuel in a certain year
 
@@ -436,11 +445,7 @@ energy_mix_co2_gdp("Argentina")
 
 ```
 
-
-
-
 ## How much electricity does the average person use per day?"
-
 
 ```{r}
 mycolours <- c("grey70","tomato")
@@ -574,12 +579,8 @@ map_robinson
 
 ```
 
-
 # Carbon Intensity of Electricity consumption
 
-While all of the previous analysis looks at historical data over the last 30+ years, the [Electricity Maps website](https://app.electricitymaps.com/map) provides real-time data about carbon intensity around the world.  What if one drives a Battery EV in Sweden or Poland? Both are good for the environment, right?
+While all of the previous analysis looks at historical data over the last 30+ years, the [Electricity Maps website](https://app.electricitymaps.com/map) provides real-time data about carbon intensity around the world. What if one drives a Battery EV in Sweden or Poland? Both are good for the environment, right?
 
-The electricity maps website makes its data avaiable too, and [Grant Chalmers create a great animation of carbon intensity of electricity consumption for Nov 2023](https://twitter.com/GrantChalmers/status/1728546415855702347) 
-
-
-
+The electricity maps website makes its data avaiable too, and [Grant Chalmers create a great animation of carbon intensity of electricity consumption for Nov 2023](https://twitter.com/GrantChalmers/status/1728546415855702347)
