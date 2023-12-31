@@ -204,7 +204,7 @@ Finally, make a plot that shows median rental prices for the top 12
 cities in the Bay area. Your final graph should look like this
 
 
-
+v
 ```{r one_bed_bay_area, echo=FALSE, out.width="90%"}
 knitr::include_graphics(here::here("images", "one_bed_bay_area.png"), error = FALSE)
 ```
