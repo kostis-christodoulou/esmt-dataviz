@@ -459,7 +459,10 @@ join2  %>%
   filter(year == 2022, 
          population > 30e6) %>% 
   ggplot()+
-  aes(x=per_capita_electricity/365, y = country, fill = myfill,label = number(per_capita_electricity/365,accuracy=0.1))+
+  aes(x=per_capita_electricity/365, 
+      y = country, 
+      fill = myfill,
+      label = number(per_capita_electricity/365,accuracy=0.1))+
   geom_col()+
   facet_wrap(~continent, scales="free")+
   scale_fill_manual(values = mycolours)+
