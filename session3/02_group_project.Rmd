@@ -305,6 +305,7 @@ top_fuel <- function(.source, .year, .n) {
   
   energy_long %>% 
     
+    
     filter(year == .year,
            source == .source) %>%
     drop_na(value) %>% 
@@ -490,8 +491,6 @@ library(plotly)
 library(sf)
 library(rnaturalearth)
 library(rnaturalearthdata)
-library(rgdal)
-library(rgeos)
 library(patchwork)
 library(mapview)
 library(tmap)
