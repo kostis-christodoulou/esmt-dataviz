@@ -31,12 +31,12 @@ mapdeck(style = mapdeck_style("light")) %>%
 
 # routing
 my_route <- mb_directions(
-  origin = "NW1 4SA",
-  destination = "British Library",
+  origin = "Schlossplatz 1, Berlin",
+  destination = "British Library, London",
   profile = "driving",
   steps = TRUE,
-  # language = "en" #https://docs.mapbox.com/api/navigation/directions/#instructions-languages # en is the default option
-   language = "es" #https://docs.mapbox.com/api/navigation/directions/#instructions-languages # en is the default option
+  language = "en" #https://docs.mapbox.com/api/navigation/directions/#instructions-languages # en is the default option
+  # language = "es" #https://docs.mapbox.com/api/navigation/directions/#instructions-languages # en is the default option
   # language = "el-GR" #https://docs.mapbox.com/api/navigation/directions/#instructions-languages
 # language = "pl" #https://docs.mapbox.com/api/navigation/directions/#instructions-languages
 # language = "zh-CN" #https://docs.mapbox.com/api/navigation/directions/#instructions-languages
@@ -54,9 +54,6 @@ leaflet(my_route) %>%
 my_route |> 
   summarise(total_distance = sum(distance),
             total_time = sum(duration))
-
-# Geocoding
-lbs <- mb_geocode("London Business School") 
 
 
 
