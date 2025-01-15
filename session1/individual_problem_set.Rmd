@@ -33,9 +33,8 @@ knitr::opts_chunk$set(
 # Grading visualisations
 
 Using the Data Visualisation checklist (under session1 files), please
-‘grade’ Figure 10 of the [JPMorgan Chase Institute on Year-over-year
-percent change in credit card spending by industry of
-employment](https://www.jpmorganchase.com/institute/research/household-income-spending/initial-household-spending-response-to-covid-19#finding-4).
+‘grade’ Figure 3 of the [JPMorgan Chase Institute on Year-over-year
+percent change in credit card spending by essential category](https://www.jpmorganchase.com/institute/all-topics/financial-health-wealth-creation/initial-household-spending-response-to-covid-19-evidence-from-credit-card-transactions).
 If you wanted the actual paper on which this publication was based, you
 can [find it
 here](https://bfi.uchicago.edu/wp-content/uploads/BFI_WP_202082.pdf).
